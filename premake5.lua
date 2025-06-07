@@ -1,22 +1,27 @@
 project "spdlog"
     kind "StaticLib"
     language "C++"
-    cppdialect "C++17"
+    cppdialect "C++20"
     staticruntime "Off"
 
     targetdir ("%{wks.location}/Bin/" .. OutputDir .. "/%{prj.name}")
     objdir ("%{wks.location}/Bin-Int/" .. OutputDir .. "/%{prj.name}")
 
+    defines {
+        "SPDLOG_COMPILED_LIB"
+    }
+
     files {
-        "src/**.cpp",
+        "src/spdlog.cpp",
+        "src/stdout_sinks.cpp",
+        "src/color_sinks.cpp",
+        "src/file_sinks.cpp",
+        "src/async.cpp",
+        "src/cfg.cpp"
     }
 
     includedirs {
         "include"
-    }
-
-    defines {
-        "SPDLOG_COMPILED_LIB"
     }
 
     filter "configurations:Debug"
