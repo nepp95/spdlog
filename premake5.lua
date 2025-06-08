@@ -7,6 +7,10 @@ project "spdlog"
     targetdir ("%{wks.location}/Bin/" .. OutputDir .. "/%{prj.name}")
     objdir ("%{wks.location}/Bin-Int/" .. OutputDir .. "/%{prj.name}")
 
+    buildoptions {
+        "/utf-8"
+    }
+
     defines {
         "SPDLOG_COMPILED_LIB"
     }
