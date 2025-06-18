@@ -12,7 +12,8 @@ project "spdlog"
     }
 
     defines {
-        "SPDLOG_COMPILED_LIB"
+        "SPDLOG_COMPILED_LIB",
+        "SPDLOG_USE_STD_FORMAT"
     }
 
     files {
